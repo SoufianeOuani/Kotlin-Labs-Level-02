@@ -1,0 +1,32 @@
+//This problem is about printing all prime numbers in a range.
+for example : from 1 to 10 
+Output : 2,3,5,7
+
+import kotlin.math.sqrt
+
+fun isPrime(number: Int): Boolean {
+
+    if (number < 2) {
+        return false
+    }
+    for (i in 2..sqrt(number.toDouble()).toInt()) {
+        if (number % i == 0) {
+            return false
+        }
+    }
+    return true
+}
+
+fun printPrimeNumbersInRange(from:Int, to:Int)
+{
+    println("All prime numbers in the range $from-$to")
+    for (i in from..to)
+    {
+        if(isPrime(i)){ println(i) }
+    }
+}
+
+fun main()
+{
+    printPrimeNumbersInRange(0,10)
+}

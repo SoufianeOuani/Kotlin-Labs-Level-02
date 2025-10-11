@@ -1,0 +1,33 @@
+//This problem is about checking if a number is perfect or not.
+//perfect number = sum(all divisors)
+//example : 28 = 1+2+4+7+14
+
+fun isPerfect(number:Int): Boolean
+{
+    var sum = 0
+    for (i in 1..(number-1))
+    {
+        if (number % i == 0)
+            sum += i
+    }
+
+    return if (sum == number){
+        true
+    } else {
+        false
+    }
+}
+
+fun main()
+{
+    var number = readPositiveNumbers("Please enter a number: ")
+
+    if (isPerfect(number))
+    {
+        println("$number is a perfect number")
+    }
+    else
+    {
+        println("$number is not a perfect number")
+    }
+}

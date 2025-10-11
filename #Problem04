@@ -1,0 +1,18 @@
+Note: the function that check if the number is perfect, it will be imported from the previous problem(problem 03)
+
+fun perfectNumbersInRange(from:Int, to:Int)
+{
+    println("All perfect numbers in the range ($from-$to): ")
+    for (i in from..to)
+    {
+        if (isPerfect(i))
+        {
+            println(i)
+        }
+    }
+}
+
+fun main()
+{
+    perfectNumbersInRange(1,10)
+}

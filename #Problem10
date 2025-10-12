@@ -1,0 +1,26 @@
+/*
+This problem is to print number digits in order (the opposite of the problem 05)
+example : 1234
+output : 
+1234
+*/
+
+
+fun printNumberInOrder()
+{
+    var number = 1234
+    number = reverseNumber(number)
+    var remainder = 0
+
+    while (number > 0)
+    {
+        remainder = number % 10
+        number /= 10
+        println(remainder)
+    }
+}
+
+fun main()
+{
+    printNumberInOrder()
+}

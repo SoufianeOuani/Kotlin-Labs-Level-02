@@ -1,0 +1,15 @@
+/*This problem is about reverse a number
+example : 1234
+output : 4321
+*/
+
+fun reverseNumber(number:Int) : Int
+{
+    return number.toString().reversed().toInt()
+}
+
+fun main()
+{
+    var number = readPositiveNumbers("Please enter a number: ")
+    print("$number after reversing : ${reverseNumber(number)}")
+}

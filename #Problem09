@@ -1,0 +1,24 @@
+/*
+This problem is based on the previous problem, it's about print all digits frequency.
+example : 1223222
+output :
+digit 1 = 1 time
+digit 2 = 5 times
+digit 3 = 1 time
+*/
+
+fun printAllDigitsFrequency(number:Int)
+{
+
+    for (i in 0 until number.toString().length )
+    {
+        if (calculateDigitFrequency(number, i) > 0)
+            println("Digit $i frequency is ${calculateDigitFrequency(number, i)}")
+    }
+}
+
+fun main()
+{
+    var number = readPositiveNumbers("Please enter a number: ")
+    printAllDigitsFrequency(number)
+}

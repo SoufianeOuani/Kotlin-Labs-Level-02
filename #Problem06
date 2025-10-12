@@ -1,0 +1,16 @@
+/*This problem is about entering a number then sum all digits
+example : 1234
+sum = 1 + 2 + 3 + 4
+sum = 10
+*/
+
+fun sumDigits(number:Int):Int
+{
+    return  number.toString().sumOf { it.digitToInt() }
+}
+
+fun main()
+{
+    var number = readPositiveNumbers("Please enter a number: ")
+    println("Sum of all $number digits = ${sumDigits(number)}")
+}

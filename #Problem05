@@ -1,0 +1,25 @@
+/*This problem is about entering a number then print its digits in reverse order
+example : 1234
+output: 
+4
+3
+2
+1
+*/
+
+fun printNumberInReverseOrder()
+{
+    var number: Int = 1234
+    var remainder = 0
+    while (number > 0)
+    {
+        remainder = number % 10
+        number /= 10
+        println(remainder)
+    }
+}
+
+fun main()
+{
+    printNumberInReverseOrder()
+}

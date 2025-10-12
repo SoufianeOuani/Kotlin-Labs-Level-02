@@ -1,0 +1,30 @@
+/*
+This problem is about calculating a digit frequency in a number.
+example : 1223222
+input : 2
+output : 2 frequency = 5 times
+*/
+
+import kotlin.text.digitToInt
+
+fun calculateDigitFrequency(number: Int, numberToCheck: Int):Int
+{
+    var numberDigits = number.toString()
+    var counter = 0
+
+    for (i in 0 until (numberDigits.length))
+    {
+        if (numberToCheck == numberDigits[i].digitToInt())
+        {
+            counter++
+        }
+    }
+    return counter
+}
+
+fun main()
+{
+    var number = readPositiveNumbers("Please enter a number: ")
+    var numberToCheck = readPositiveNumbers("Please enter a number to check: ")
+    println("$numberToCheck frequency = ${calculateDigitFrequency(number, numberToCheck)}")
+}

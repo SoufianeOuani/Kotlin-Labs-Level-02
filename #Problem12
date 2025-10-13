@@ -1,0 +1,29 @@
+/*
+This problem is about printing reverse inverted pattern.
+input : 5
+output : 
+55555
+4444
+333
+22
+1
+*/
+
+fun printInvertedPattern()
+{
+    var number = 3
+    for (i in number downTo 1)
+    {
+        for (j in 1..number)
+        {
+            print(i)
+        }
+        print("\n")
+        number--
+    }
+}
+
+fun main()
+{
+    printInvertedPattern()
+}

@@ -1,0 +1,28 @@
+/*
+This problem is about printing inverted letter pattern in order.
+input : 5
+output : 
+A
+BB
+CCC
+DDDD
+EEEEE
+*/
+
+fun printLetterPatternInOrder(number: Int)
+{
+    for (i in 1..number)
+    {
+        repeat(i)
+        {
+            val letter = (64+i).toChar()
+            print(letter)
+        }
+        println()
+    }
+}
+
+fun main()
+{
+    printLetterPatternInOrder(5)
+}

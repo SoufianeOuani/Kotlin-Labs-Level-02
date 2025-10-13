@@ -1,0 +1,28 @@
+/*
+This problem is about printing inverted pattern in order.
+input : 5
+output : 
+1
+22
+333
+4444
+55555
+*/
+
+fun printInvertedPatternInOrder()
+{
+    var number = 5
+    for (i in 1..number)
+    {
+        for (j in 1..i)
+        {
+            print(i)
+        }
+        print("\n")
+    }
+}
+
+fun main()
+{
+    printInvertedPatternInOrder()
+}

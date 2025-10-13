@@ -1,0 +1,24 @@
+/*
+This problem is about checking if a number is palindrome or not.
+example:
+input : 1223221
+output : yes it's a palindrome.
+*/
+
+fun isPalindromeNumber(number: Int) : Boolean
+{
+    return number == number.toString().reversed().toInt()
+}
+
+fun main()
+{
+    var number = readPositiveNumbers("Please enter a number: ")
+    if (isPalindromeNumber(number))
+    {
+        println("$number is a palindrome")
+    }
+    else
+    {
+        println("$number is not a palindrome")
+    }
+}

@@ -1,0 +1,29 @@
+/*
+This problem is about printing inverted letter patten.
+input : 5
+output : 
+EEEEE
+DDDD
+CCC
+BB
+A
+*/
+
+fun printInvertedLetterPattern(number: Int)
+{
+    for(i in number downTo 1)
+    {
+        val letter = (64+i).toChar()
+        repeat(i)
+        {
+            print(letter)
+        }
+        println()
+    }
+}
+
+fun main()
+{
+    val number = readPositiveNumbers("Please enter a number: ")
+    printInvertedLetterPattern(5)
+}

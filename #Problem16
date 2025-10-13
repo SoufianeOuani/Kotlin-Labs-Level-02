@@ -1,0 +1,22 @@
+//This problem is about print all words from AAA to ZZZ.
+
+fun printAllWordsFromAAAtoZZZ()
+{
+    for (i in 65..90)
+    {
+        for (j in 65..90)
+        {
+            for (k in 65..90)
+            {
+                val word: String = "${i.toChar()}${j.toChar()}${k.toChar()}"
+                print(word)
+                println()
+            }
+        }
+    }
+}
+
+fun main()
+{
+    printAllWordsFromAAAtoZZZ()
+}

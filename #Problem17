@@ -1,0 +1,43 @@
+/*
+This problem is about guessig the entered password and return the position when the program find it.
+example : 
+input : AAF
+output : 
+Trail[1] : AAA
+Trail[1] : AAB
+Trail[1] : AAC
+Trail[1] : AAD
+Trail[1] : AAE
+Trail[1] : AAF
+the password is AAF found after 6 trail(s).
+*/
+
+fun guess3LetterPassword(password: String): Boolean {
+    var counter = 0
+    var res: String = ""
+    for (i in 65..90)
+    {
+        for (j in 65..90)
+        {
+            for (k in 65..90)
+            {
+                val word: String = "${i.toChar()}${j.toChar()}${k.toChar()}"
+                counter++
+                println("Trial[$counter]: $word")
+
+                if (password == word)
+                {
+                    println("Password is : $word, Found after : $counter Trial(s).")
+                    return true
+                }
+                println()
+            }
+        }
+    }
+    return false
+}
+
+fun main()
+{
+    guess3LetterPassword("AAF")
+}

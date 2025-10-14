@@ -1,0 +1,48 @@
+/*
+This problem is about filling an array with random numbers, then print them.
+*/
+
+
+fun fillArrayFrom1ToN(arrLength: Int): Array<Int>
+{
+    var arrNumbers = Array(arrLength) {0}
+    for (i in 0 until arrLength)
+    {
+        println("Enter Element[${i+1}]: ")
+        arrNumbers[i] = readln().toInt()
+    }
+    return arrNumbers
+}
+
+fun printArrayElements(arrNumbers: Array<Int>, arrLength: Int)
+{
+    for (i in 0 until arrLength)
+    {
+        print("${arrNumbers[i]} ")
+    }
+    println()
+}
+
+fun numberFrequencyInArray(arrNumbers: Array<Int>, arrLength: Int, numberToCheck:Int):Int
+{
+    var counter = 0
+    for (i in 0 until arrLength)
+    {
+        if (arrNumbers[i] == numberToCheck)
+        {
+            counter++
+        }
+    }
+    return counter
+}
+
+fun main()
+{
+    var arrLength = readPositiveNumbers("Please enter array length: ")
+    var arrNumbers = fillArrayFrom1ToN(arrLength)
+    print("Original array: ")
+    printArrayElements(arrNumbers,arrLength)
+
+    val numberToCheck = readPositiveNumbers("Enter a number to check: ")
+    println("$numberToCheck is repeated ${numberFrequencyInArray(arrNumbers, arrLength, numberToCheck)} time(s).")
+}

@@ -1,0 +1,57 @@
+/*
+This problem is about choose the wanted characted to print
+1-> small letters
+2-> capital letters
+3-> special characters
+4-> digits
+*/
+
+fun randomSmallLetter(): Char
+{
+    return randomNumberGenerator(97, 122).toChar()
+}
+
+fun randomCapitalLetter(): Char
+{
+    return randomNumberGenerator(65, 90).toChar()
+}
+
+fun randomSpecialCharacter(): Char
+{
+    return randomNumberGenerator(33, 47).toChar()
+}
+
+fun randomDigit(): Char
+{
+    return randomNumberGenerator(48, 57).toChar()
+}
+
+fun getRandomCharacter(charType: Int): Char
+{
+    return when (charType)
+    {
+        1 -> randomSmallLetter()
+        2 -> randomCapitalLetter()
+        3 -> randomSpecialCharacter()
+        4 -> randomDigit()
+        else -> '?'
+    }
+}
+
+fun menu()
+{
+    println("choose a character type :")
+    println("1-> small letters: ")
+    println("2-> capital letters: ")
+    println("3-> special characters: ")
+    println("4-> digits: ")
+}
+
+fun main()
+{
+    menu()
+    val charType = readPositiveNumbers("Choose from 1-4: ")
+    val result = getRandomCharacter(charType)
+
+    println("Random character: $result")
+}

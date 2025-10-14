@@ -1,0 +1,21 @@
+/*
+This problem is about printing random numbers in the range : from - to.
+*/
+
+
+import kotlin.random.Random
+
+fun randomNumberGenerator(from:Int, to:Int): Int =
+    Random.nextInt(from, to+1)
+
+fun main()
+{
+    val from = readPositiveNumbers("Please enter a number: ")
+    val to = readPositiveNumbers("Please enter a number: ")
+    println("Random numbers in the range $from-$to: ")
+
+    repeat(to-from+1)
+    {
+        println(randomNumberGenerator(from, to))
+    }
+}

@@ -1,0 +1,38 @@
+/*
+This problem is about encrypting an entered text.
+example: 
+input : Soufiane
+Output : Uqwhkcpg
+*/
+
+fun encryptText(text:String, encryptionKey:Short) : String
+{
+    var encryptedText = StringBuilder()
+    for (char in text)
+    {
+        val encryptedChar = (char.code + encryptionKey).toChar()
+        encryptedText.append(encryptedChar)
+    }
+    return encryptedText.toString()
+}
+
+fun decryptText(text:String, encryptionKey:Short) : String
+{
+    var encryptedText = StringBuilder()
+    for (char in text)
+    {
+        val encryptedChar = (char.code - encryptionKey).toChar()
+        encryptedText.append(encryptedChar)
+    }
+    return encryptedText.toString()
+}
+
+fun main()
+{
+    var textToEncrypt = "Soufiane"
+    var encryptionKey: Short = 2
+
+    println("Text before encryption : $textToEncrypt")
+    println("text after encryption : ${encryptText(textToEncrypt, encryptionKey)}")
+    println("text after decryption : ${decryptText(encryptText(textToEncrypt, encryptionKey), encryptionKey)}")
+}

@@ -1,0 +1,15 @@
+/*
+This problem is to calculate the average of an array
+*/
+fun averageArrayNumbers(arrNumbers: Array<Int>, arrLength: Int) : Float =
+    (sumAllInArrayNumbers(arrNumbers, arrLength) / arrLength).toFloat()
+
+fun main()
+{
+    var arrLength = readPositiveNumbers("Please enter array length: ")
+    var arrNumbers = fillArrayWithRandomNumbers(arrLength)
+    print("Original array: ")
+    printArrayElements(arrNumbers,arrLength)
+
+    println("Array average : ${averageArrayNumbers(arrNumbers, arrLength)}")
+}

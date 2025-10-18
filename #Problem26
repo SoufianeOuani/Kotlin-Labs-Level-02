@@ -1,0 +1,15 @@
+/*
+This problem is to sum all the array elements
+*/
+fun sumAllInArrayNumbers(arrNumbers: Array<Int>, arrLength: Int) =
+    (0 until arrLength).sumOf { arrNumbers[it] }
+
+fun main()
+{
+    var arrLength = readPositiveNumbers("Please enter array length: ")
+    var arrNumbers = fillArrayWithRandomNumbers(arrLength)
+    print("Original array: ")
+    printArrayElements(arrNumbers,arrLength)
+
+    println("Sum all array numbers : ${sumAllInArrayNumbers(arrNumbers, arrLength)}")
+}

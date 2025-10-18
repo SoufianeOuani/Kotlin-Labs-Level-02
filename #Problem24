@@ -1,0 +1,15 @@
+/*
+This problem is about geting the max number in array
+*/
+fun maxNumberInArray(arrNumbers: Array<Int>, arrLength: Int) =
+    (0 until arrLength).maxOf { arrNumbers[it] }
+
+fun main()
+{
+    var arrLength = readPositiveNumbers("Please enter array length: ")
+    var arrNumbers = fillArrayWithRandomNumbers(arrLength)
+    print("Original array: ")
+    printArrayElements(arrNumbers,arrLength)
+
+    println("The maximum number in array is: ${maxNumberInArray(arrNumbers, arrLength)}")
+}

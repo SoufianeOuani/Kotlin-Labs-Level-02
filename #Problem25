@@ -1,0 +1,15 @@
+/*
+This problem is to get the min number in array
+*/
+fun minNumberInArray(arrNumbers: Array<Int>, arrLength: Int) =
+    (0 until arrLength).minOf { arrNumbers[it] }
+
+fun main()
+{
+    var arrLength = readPositiveNumbers("Please enter array length: ")
+    var arrNumbers = fillArrayWithRandomNumbers(arrLength)
+    print("Original array: ")
+    printArrayElements(arrNumbers,arrLength)
+
+    println("The minimum number in array is: ${minNumberInArray(arrNumbers, arrLength)}")
+}

@@ -1,0 +1,26 @@
+/*
+This problem is about filling an array with random numbers
+*/
+import android.health.connect.datatypes.units.Length
+import kotlin.random.Random
+
+fun randomNumberGenerator(from: Int, to: Int):Int =
+    Random.nextInt(from, to+1)
+
+fun fillArrayWithRandomNumbers(arrLength: Int): Array<Int>
+{
+    var arrNumbers = Array(arrLength) {0}
+    for (i in 0 until arrLength)
+    {
+        arrNumbers[i] = randomNumberGenerator(1, 100)
+    }
+    return arrNumbers
+}
+
+fun main()
+{
+    var arrLength = readPositiveNumbers("Please enter array length: ")
+    var arrNumbers = fillArrayWithRandomNumbers(arrLength)
+    print("Array Elements: ")
+    printArrayElements(arrNumbers,arrLength)
+}

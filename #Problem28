@@ -1,0 +1,32 @@
+/*
+This problem is about copying array1 to array2
+*/
+
+package com.example.problemsolvinglevel01_kotlin
+
+fun copiedArray(arrOriginal: Array<Int>, arrReceiver: Array<Int>, arrLength: Int): Array<Int>
+{
+    for (i in 0 until arrLength)
+    {
+        arrReceiver[i] = arrOriginal[i]
+    }
+    return arrReceiver
+}
+
+
+fun main()
+{
+    var arrLength = readPositiveNumbers("Please enter array length: ")
+    var arr1 = fillArrayWithRandomNumbers(arrLength)
+    var arrReceiver = Array(arrLength) {0}
+    var arr2 = copiedArray(arr1, arrReceiver, arrLength)
+
+
+    print("Original array: ")
+    printArrayElements(arr1,arrLength)
+
+    print("Copied array: ")
+    printArrayElements(arr2,arrLength)
+
+
+}

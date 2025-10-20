@@ -1,0 +1,28 @@
+package com.example.problemsolvinglevel01_kotlin
+
+fun sum2ArraysInThirdOne(arr1: Array<Int>, arr2: Array<Int>, arrLength:Int): Array<Int>
+{
+    val sumArrays = mutableListOf<Int>()
+    for (i in 0 until arrLength)
+    {
+        sumArrays.add(arr1[i] + arr2[i])
+    }
+    return sumArrays.toTypedArray()
+}
+
+fun main()
+{
+    val arr1Length = readPositiveNumbers("Please enter array length: ")
+    val arr1 = fillArrayWithRandomNumbers(arr1Length)
+    val arr2 = fillArrayWithRandomNumbers(arr1Length)
+    val arr3 = sum2ArraysInThirdOne(arr1, arr2, arr1Length)
+
+    print("array 1 elements: ")
+    printArrayElements(arr1,arr1Length)
+
+    print("array 2 elements: ")
+    printArrayElements(arr2, arr1Length)
+
+    print("Sum of array1 and array2: ")
+    printArrayElements(arr3, arr1Length)
+}

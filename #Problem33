@@ -1,0 +1,20 @@
+package com.example.problemsolvinglevel01_kotlin
+
+fun storeKeysInArray(arrLength:Int): Array<String>
+{
+    var arrKeys = Array(arrLength){""}
+    for (i in 0 until arrLength)
+    {
+        arrKeys[i] = generateKey(4)
+    }
+    return arrKeys
+}
+
+fun main()
+{
+    val arrLength = readPositiveNumbers("How many key to generate? ")
+    val arrKeys = storeKeysInArray(arrLength)
+
+    println("array 1 elements: ")
+    printArrayKeysElements(arrKeys, arrLength)
+}

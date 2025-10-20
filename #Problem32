@@ -1,0 +1,29 @@
+package com.example.problemsolvinglevel01_kotlin
+
+fun copyArrayInReverseOrder(arr1: Array<Int>, arrReceiver: Array<Int>,  arr1Length:Int): Array<Int>
+{
+    var counter = arr1Length
+
+    for (i in 0 until arr1Length)
+    {
+        counter--
+        arrReceiver[counter] = arr1[i]
+    }
+
+    return arrReceiver
+}
+
+fun main()
+{
+    val arrLength = readPositiveNumbers("Please enter array length: ")
+    val arr1 = fillArrayWithRandomNumbers(arrLength)
+    val arrReceiver = Array(arrLength){0}
+    val arr2 = copyArrayInReverseOrder(arr1, arrReceiver, arrLength)
+
+    print("array 1 elements: ")
+    printArrayElements(arr1,arrLength)
+
+    print("array 2 elements after copying array 1 in reverse order: ")
+    printArrayElements(arr2, arrLength)
+
+}

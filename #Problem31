@@ -1,0 +1,28 @@
+package com.example.problemsolvinglevel01_kotlin
+
+fun shuffleArray(arr1: Array<Int>, arrLength:Int):Array<Int>
+{
+    for (i in 0 until arrLength)
+    {
+        val index1 = randomNumberGenerator(0, arrLength - 1)
+        val index2 = randomNumberGenerator(0, arrLength - 1)
+        swapNumbers(arr1, index1, index2)
+    }
+
+    return arr1
+}
+
+fun main()
+{
+    val arrLength = readPositiveNumbers("Please enter array length: ")
+    var arr1 = fillArrayFrom1ToN(arrLength)
+    var shuffledArray = Array(arrLength) {0}
+
+    print("array 1 elements before shuffling: ")
+    printArrayElements(arr1, arrLength)
+
+    arr1 = shuffleArray(arr1, arrLength)
+
+    print("array 1 elements after shuffling: ")
+    printArrayElements(arr1, arrLength)
+}

@@ -1,0 +1,26 @@
+fun isNumberInArray(arr1:Array<Int>, arrLength:Int, numberToCheck:Int): Boolean
+{
+    return searchForNumberInArray(arr1, arrLength, numberToCheck) != -1
+}
+
+fun main()
+{
+    val arrLength = readPositiveNumbers("Please enter array length: ")
+    val arr1 = fillArrayWithRandomNumbers(arrLength)
+
+    print("array 1 elements: ")
+    printArrayElements(arr1, arrLength)
+
+    val numberToCheck = readPositiveNumbers("Please enter a number to search for: ")
+
+    if (isNumberInArray(arr1, arrLength, numberToCheck))
+    {
+        println("The number you searching for: $numberToCheck")
+        println("The number is found :-(")
+    }
+    else
+    {
+        println("The number you searching for: $numberToCheck")
+        println("The number is not found :-)")
+    }
+}

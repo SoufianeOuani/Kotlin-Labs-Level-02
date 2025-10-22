@@ -1,0 +1,27 @@
+fun addNumbersDynamically(): Array<Int>
+{
+    var addMore = false
+    var numbers = mutableListOf<Int>()
+
+    do
+    {
+        val number = readPositiveNumbers("Please enter a number: ")
+        numbers.add(number)
+
+        println("Do you want to add more numbers? [0]:No, [1]:yes? ")
+        addMore = readln().toBoolean()
+
+    } while (addMore == true)
+
+    return numbers.toTypedArray()
+}
+
+fun main() {
+    val arr1 = addNumbersDynamically()
+    val arrLength = arr1.size
+
+    println("Array Length: $arrLength")
+
+    print("array 1 elements: ")
+    printArrayElements(arr1, arrLength)
+}

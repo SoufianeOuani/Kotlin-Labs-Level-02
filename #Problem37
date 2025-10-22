@@ -1,0 +1,27 @@
+fun copyOddNumbersToArray(arr: Array<Int>):Array<Int>
+{
+    val Odds = mutableListOf<Int>()
+    for (num in arr)
+    {
+        if (isOdd(num))
+        {
+            Odds.add(num)
+        }
+    }
+    return Odds.toTypedArray()
+}
+
+fun main()
+{
+    val arr1Length = readPositiveNumbers("Please enter array length: ")
+    val arr1 = fillArrayWithRandomNumbers(arr1Length)
+    val arrOdds = copyOddNumbersToArray(arr1)
+    val arr2Length = arrOdds.size
+
+    print("array 1 elements: ")
+    printArrayElements(arr1, arr1Length)
+
+
+    print("Odd numbers in array 1: ")
+    printArrayElements(arrOdds, arr2Length)
+}

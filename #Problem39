@@ -1,0 +1,31 @@
+package com.example.problemsolvinglevel01_kotlin
+
+fun isArrayPalindrome(arr1: Array<Int>): Boolean
+{
+    val reversedArray = arr1.reversed()
+    for (i in 0 until arr1.size)
+    {
+        if (arr1[i] != reversedArray[i])
+        {
+            return false
+        }
+    }
+    return true
+}
+
+fun main()
+{
+    val arr1 = arrayOf(10,20,30,30,20,10)
+
+    print("array 1 elements: ")
+    printArrayElements(arr1, arr1.size)
+
+    if (isArrayPalindrome(arr1))
+    {
+        println("Yes, the array is palindrome :-)")
+    }
+    else
+    {
+        println("No, the array is not palindrome :-(")
+    }
+}

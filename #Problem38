@@ -1,0 +1,30 @@
+fun copyDistinctNumbersToArray(arr1: Array<Int>):Array<Int>
+{
+    val tempArr = Array(arr1.size) { 0 }
+    var counter = 0
+
+    for (num in arr1)
+    {
+        if(!isNumberInArray(tempArr,counter, num))
+        {
+            tempArr[counter] = num
+            counter++
+        }
+    }
+
+    return Array(counter) {i -> tempArr[i]}
+}
+
+fun main()
+{
+    val arr1 = fillArrayHardCoded()
+
+    print("array 1 elements: ")
+    printArrayElements(arr1, arr1.size)
+
+    val arr2 = copyDistinctNumbersToArray(arr1)
+
+    print("array 2 elements: ")
+    printArrayElements(arr2, arr2.size)
+
+}

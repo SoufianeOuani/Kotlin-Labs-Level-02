@@ -1,0 +1,40 @@
+
+fun searchForNumberInArray(arr1:Array<Int>, arrLength:Int, numberToCheck:Int):Int
+{
+    var counter = 0
+    for (num in arr1)
+    {
+        if (num == numberToCheck)
+        {
+            return counter
+        }
+        counter++
+    }
+    return -1
+}
+
+fun main()
+{
+    val arrLength = readPositiveNumbers("Please enter array length: ")
+    val arr1 = fillArrayWithRandomNumbers(arrLength)
+
+    print("array 1 elements: ")
+    printArrayElements(arr1, arrLength)
+
+    val numberToCheck = readPositiveNumbers("Please enter a number to search for: ")
+    var numberPosition = searchForNumberInArray(arr1, arrLength, numberToCheck)
+    var numberOrder = numberPosition + 1
+
+
+    if (searchForNumberInArray(arr1, arrLength, numberToCheck) == -1)
+    {
+        println("The number you searching for: $numberToCheck")
+        println("The number is not found :-(")
+    }
+    else
+    {
+        println("The number you searching for: $numberToCheck")
+        println("The number found at position: $numberPosition")
+        println("The number found at Order: $numberOrder")
+    }
+}

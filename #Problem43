@@ -1,0 +1,24 @@
+fun countNegativeNumbersInArray(arr1: Array<Int>):Int
+{
+    var counter = 0
+    for (num in arr1)
+    {
+        if(isNegative(num))
+        {
+            counter++
+        }
+    }
+    return counter
+}
+
+fun main()
+{
+    val arr1Length = readPositiveNumbers("Please enter array length: ")
+    val arr1 = fillArrayWithRandomNumbers(arr1Length)
+
+    print("array 1 elements: ")
+    printArrayElements(arr1, arr1Length)
+
+    var negativeNumbersInArray = countNegativeNumbersInArray(arr1)
+    println("Negative Numbers in the array : $negativeNumbersInArray")
+}

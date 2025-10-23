@@ -1,0 +1,24 @@
+fun countPositiveNumbersInArray(arr1: Array<Int>):Int
+{
+    var counter = 0
+    for (num in arr1)
+    {
+        if(isPositive(num))
+        {
+            counter++
+        }
+    }
+    return counter
+}
+
+fun main()
+{
+    val arr1Length = readPositiveNumbers("Please enter array length: ")
+    val arr1 = fillArrayWithRandomNumbers(arr1Length)
+
+    print("array 1 elements: ")
+    printArrayElements(arr1, arr1Length)
+
+    var positiveNumbersInArray = countPositiveNumbersInArray(arr1)
+    println("Positive Numbers in the array : $positiveNumbersInArray")
+}

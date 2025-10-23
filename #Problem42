@@ -1,0 +1,24 @@
+fun countEvenNumbersInArray(arr1: Array<Int>):Int
+{
+    var counter = 0
+    for (num in arr1)
+    {
+        if(isEven(num))
+        {
+            counter++
+        }
+    }
+    return counter
+}
+
+fun main()
+{
+    val arr1Length = readPositiveNumbers("Please enter array length: ")
+    val arr1 = fillArrayWithRandomNumbers(arr1Length)
+
+    print("array 1 elements: ")
+    printArrayElements(arr1, arr1Length)
+
+    var evenNumbersInArray = countEvenNumbersInArray(arr1)
+    println("Even Numbers in the array : $evenNumbersInArray")
+}
